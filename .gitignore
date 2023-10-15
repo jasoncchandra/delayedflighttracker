@@ -1,1 +1,10 @@
+# notebook
+.ipynb_checkpoints/
+
+# env
+env/
+
+# creds
 client.json
+ensign-creds.json
+opensky-creds.json
