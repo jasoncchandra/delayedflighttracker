@@ -5,6 +5,10 @@
 env/
 
 # creds
-client.json
-ensign-creds.json
-opensky-creds.json
+ensign/client.json
+ensign/ensign-creds.json
+ensign/opensky-creds.json
+
+# misc
+ensign/join.py
+test/
