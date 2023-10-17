@@ -8,7 +8,9 @@ env/
 ensign/client.json
 ensign/ensign-creds.json
 ensign/opensky-creds.json
+ensign/flightradar-creds.json
 
 # misc
-ensign/join.py
+ensign/ref/
+ensign/fr24_testing.ipynb
 test/
