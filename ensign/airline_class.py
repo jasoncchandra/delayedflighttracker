@@ -2,6 +2,14 @@ class Flight:
 
     def __init__(self, icao24):
         self.icao24 = icao24
+        self.origin_airport_icao = "Unknown"
+        self.destination_airport_icao = "Unknown"
+        self.scheduled_departure = "Unknown"
+        self.scheduled_arrival = "Unknown"
+        self.actual_departure = "Unknown"
+        self.estimated_arrival = "Unknown"
+        self.historical_flight_time = "Unknown"
+        self.historical_delay = "Unknown"
 
     # taken from Ensign database
     def store_ensign_data(self, flight):
