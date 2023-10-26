@@ -1,5 +1,5 @@
 ## Abstract
-We created this project for the [Fall '23 MScADS Hackathon](/UChicago-Rotational%20Hackathon%20Fall%202023.pdf), with support from the [UChicago Data Science Institute](https://datascience.uchicago.edu/) and [Rotational Labs](https://rotational.io/).
+**This project placed 1st for the [Fall '23 MScADS Hackathon](/UChicago-Rotational%20Hackathon%20Fall%202023.pdf), with support from the [UChicago Data Science Institute](https://datascience.uchicago.edu/) and [Rotational Labs](https://rotational.io/).**
 
 We were tasked with using [Ensign](https://rotational.io/ensign/), a **cloud-based asynchronous data streaming tool** developed by Rotational Labs to allow for **real-time data pipelines through a publish/subscribe model**, with a goal to train **event-driven machine learning models** (such as through [River](https://riverml.xyz/0.19.0/introduction/basic-concepts/)) for practical use cases.
 
@@ -7,7 +7,7 @@ Our main goal is to develop a real-time flight delay prediction system to addres
 
 For more information, our presentation can be found [here](/Hackathon%20Presentation.pdf).
 
-Our Team - all UChicago MSc Applied Data Science Students: 
+Our Team - **The Three Musketeers**: 
 - [Jason Chandra](https://github.com/jasoncchandra)
 - [Kevin Sianto](https://github.com/ksianto)
 - [Toby Chiu](https://github.com/tobytcc)
