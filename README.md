@@ -58,6 +58,22 @@ If given more time during our hackathon, we can try more complex versions of the
 
 - All team members were new to data science (particularly ML), and had little coding experience. We struggled massively in building event-driven models, and had to learn real-time engineering/machine learning from scratch - **this was a great experience!** If given the chance to rebuild again with our current knowledge, we would have gone a lot further in the hackathon!
 
+## Further Expansions
+
+- Parallel to our primary focus on Ensign and real-time flight delay prediction, our project's expansion ventured into leveraging Google Cloud Platform (GCP) and big data technologies, notably employing PySpark for advanced analytics. Through this expansion, we delved into two pivotal areas:
+
+1. Association Mining for Targeted Marketing: Identify traveler behavior patterns by uncovering correlations between airports and preferred airlines, aiding airline marketing teams in tailoring strategies for route planning and passenger engagement.
+2. Graph-Based Analysis for Delay Reduction: Utilize delay-integrated network representation to analyze delay propagation across airports and airlines, helping airline operations teams identify influential nodes and routes to minimize delays and enhance operational efficiency.
+
+- **Association rule mining**, like FP-Growth used here, emphasizes discovering frequent patterns within transactions, beneficial for identifying strategic airline route planning rather than directly pinpointing airlines with the lowest delays for specific routes.
+Specifically, we filter and analyze frequent itemsets and association rules based on high lift and support, centered on departures from ORD or MDW, aiding airlines in optimizing flight schedules and operations. Specifically, we filter and analyze frequent itemsets and association rules based on high lift and support, centered on departures from ORD or MDW, aiding airlines in optimizing flight schedules and operations.
+
+
+
+
+
+
+
 
 ## Further Developments
 - Improve our model performance (as stated above)
