@@ -12,6 +12,8 @@ Our Team - **The Three Musketeers**:
 - [Kevin Sianto](https://github.com/ksianto)
 - [Toby Chiu](https://github.com/tobytcc)
 
+<img src="/img/3Musketeers.jpeg" alt="The Three Musketeers" width="300">
+
 
 ## Approach
 
@@ -65,21 +67,58 @@ If given more time during our hackathon, we can try more complex versions of the
 1. Association Mining for Targeted Marketing: Identify traveler behavior patterns by uncovering correlations between airports and preferred airlines, aiding airline marketing teams in tailoring strategies for route planning and passenger engagement.
 2. Graph-Based Analysis for Delay Reduction: Utilize delay-integrated network representation to analyze delay propagation across airports and airlines, helping airline operations teams identify influential nodes and routes to minimize delays and enhance operational efficiency.
 
-Our full exploration can be found [Here for results](/Expansion_ The 2 Goals and Scope of this Project.pdf) and [Here for the python code](/Association and Graph Analysis-Final.ipynb)
+Our full exploration can be found [Here for results](https://github.com/jasoncchandra/delayedflighttracker/blob/main/Expansion_%20The%202%20Goals%20and%20Scope%20of%20this%20Project.pdf) and [Here for the python code](https://github.com/jasoncchandra/delayedflighttracker/blob/main/Association%20and%20Graph%20Analysis-Final.ipynb)
 
-- **Association rule mining**, like FP-Growth used here, emphasizes discovering frequent patterns within transactions, beneficial for identifying strategic airline route planning rather than directly pinpointing airlines with the lowest delays for specific routes.
+
+### Association rule mining
+Association rule mining like FP-Growth used here, emphasizes discovering frequent patterns within transactions, beneficial for identifying strategic airline route planning rather than directly pinpointing airlines with the lowest delays for specific routes.
 Specifically, we filter and analyze frequent itemsets and association rules based on high lift and support, centered on departures from ORD or MDW, aiding airlines in optimizing flight schedules and operations. Specifically, we filter and analyze frequent itemsets and association rules based on high lift and support, centered on departures from ORD or MDW, aiding airlines in optimizing flight schedules and operations.
 
+Our outcomes were the following:
+
+![Association Mining Outcomes](/img/AssociationMining.png)
+
+- MDW (Chicago Midway International Airport) and Southwest Airlines: The association between MDW and Southwest Airlines reveals a very high confidence level (93.15%) and a significant lift value (4.52), indicating an extremely strong connection between Southwest Airlines and flights departing from MDW. 
+
+- Strong Association with ORD (Chicago O'Hare Airport): American Airlines demonstrates a moderate confidence level (16%) with ORD, indicating a significant association with the airport, along with other airlines like SkyWest Airlines and United Airlines. The high lift values (>1) suggest these airlines are more frequently associated with ORD than expected randomly.
+
+- Connection between Airports (e.g., ORD and LGA): The association rule between LGA (LaGuardia Airport) and ORD (Chicago O'Hare Airport) with American Airlines shows a high confidence level (41.3%), indicating a strong association between these airports in terms of flights operated by American Airlines. The notably high lift value (3.07) indicates a substantial influence or relationship between American Airlines' flights from LGA to ORD. 
+
+Capitalizing on American Airlines' robust presence at Chicago O'Hare International Airport (ORD), boasting 600+ daily departures and access to a wide network of over 150 global destinations (Source: dataset), American Airlines emerges as an enticing option for families intending to visit Chicago. Aligning with evolving family travel preferences, a 2021 Expedia Group report revealed that 70% of families now seek comprehensive travel packages comprising accommodations, activities, and transportation, indicating a burgeoning trend in family-centric travel preferences. Chicago, as a vibrant tourist hotspot that attracted over 55 million visitors in 2022, underscores the city's appeal as a family-friendly destination. To leverage this potential, American Airlines can strategically collaborate with prominent Chicago attractions such as Millennium Park, Navy Pier, and Lincoln Park Zoo—renowned havens for families exploring the city. Partnering with GOCHICAGO, known for its all-inclusive passes encompassing attractions, transportation, and dining discounts, American Airlines can curate exclusive deals, enhancing the allure for families planning visits to Chicago
 
 
+### Graph Theory
+
+For traveler segments aiming to reduce delays and explore diverse route options, like consultants seeking efficient travel, we're exploring an alternative strategy beyond association mining. Our new approach involves leveraging graph theory, where airports are represented as nodes in a network, connected by edges that signify relationships based on shared passengers or historical delay occurrences. What makes this approach innovative is how we're integrating delay information into this network structure. Each connection's strength is determined by historical delay data, factoring in both departure and arrival times. By using this graph-based model, our goal is to create a more comprehensive analysis. This way, we don't just identify commonly used routes but also consider historical delay trends. It's all about providing a refined framework that caters to travelers looking for smoother, less-delayed travel experiences and a wider array of travel choices.
+
+![Graph Theory Sample Output with Delays](/img/Weights%2C%20Delays.png)
 
 
+There are 3 different applications that can be used here:
 
+1. Exploration of Indirect Flight Paths (JFK to SFO) by Top Airlines 
+Consultants would benefit from this analysis if there are no direct flights between JFK and SFO as it helps identify popular indirect routes.
+Airlines, by leveraging this analysis, can identify market gaps, optimize their flight schedules, and potentially introduce new routes based on the demand for indirect flights between these two airports. 
+
+![Example of A -> B -> C](/img/AtoBtoC.png)
+
+2. BFS (Breadth-First Search) algorithm considering delays in a graph (representing airline connections)
+The algorithm computes levels (or distances) between nodes (airports) while factoring in delays as weights on edges (routes). 
+Levels are determined by incrementally adding delays to the current level as the algorithm traverses the graph, helping airlines understand the impact of delays on the connectivity and distances between airports in their network.
+
+![Example of Nodes with Delays incorporated](/img/Nodes.png)
+
+3. Airline Route Optimization: Leveraging High Connectivity Airports for Enhanced Efficiency
+In the realm of airline route optimization, leveraging highly connected airports becomes a key point for enhancing operational efficiency. Understanding the principles of in-degree and out-degree is essential: in-degree represents flights arriving at an airport, while out-degree signifies flights departing from an airport. For instance, Burbank Airport (BUR) exemplifies this concept, displaying a total degree of 35,051, attributed to its 17,549 incoming and 17,502 outgoing flights, indicating significant connectivity. This information presents a potential strategy for airlines to refine their flight schedules efficiently. By prioritizing routes linked to airports with substantial connectivity, airlines can optimize their flight networks, potentially streamlining operations and offering improved travel options.
+
+![In and Out Degrees](/img/InandOutDegrees.png)
 
 
 ## Further Developments
-- Improve our model performance (as stated above)
+- Improve our model performance (as stated in the limitation section)
 
 - Further steps could involve real-time implementation and integration with travel platforms, enhancing the user experience for consultants and travelers.
 
 - Future extensions: expanding the system to cover a broader range of flights and regions. Or, we could integrate additional features, such as weather data, to enhance prediction accuracy and further empower air travelers.
+
+- Turning it into a web app. Rotational Labs recently posted an article [here](https://rotational.io/blog/ensign-streamlit/) that would allow us to deploy this into an app - which we are currently exploring right now.
